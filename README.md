@@ -21,17 +21,17 @@ Question 1:-
 
 You have a stack with push, pop and stackTop functionality. Assume that you have a sequence of n integers 1,2,3,….,n in this order. Using the given stack and the built-in functionality as mentioned already, state whether it is possible to construct a given output sequence or not. If yes, then show the sequence. (You can read the input only sequentially. Similarly, you can write on the output only sequentially, and once the output is written, you can’t read or modify it later.)
 
-Example 1: 
+### Example 1: 
 
 Given input n = 3. (i.e. sequence available to you is 1,2,3). And given sequence: 2,1,3.
 
-Answer: Yes. It is possible by the following sequence of operations: push(1), push(2), pop(), pop(), push(3), pop(). (i.e., we can create the sequence 2,1,3 using a stack.)
+### Answer: Yes. It is possible by the following sequence of operations: push(1), push(2), pop(), pop(), push(3), pop(). (i.e., we can create the sequence 2,1,3 using a stack.)
 
-Example 2: 
+### Example 2: 
 
 Given input n=3. Given sequence: 3,1,2.
 
-Answer: Not possible.
+### Answer: Not possible.
 
 Your program should first read a given n from the user. And then read a sequence of length n. User will provide the sequence with space between the elements. That is, for the sequence 1,2,3, you will get 1 2 3. The program should output Yes/No, followed by the sequence of push/pop steps as already shown in example 1 above (of course, this push/pop list should be output only when the answer is yes).
 
@@ -45,13 +45,17 @@ Convert a given Infix expression to Postfix expression. And then evaluate this p
 
 (iii) ^ (unary squaring operator, having higher precedence than +,-,*,/ but lower than brackets). Example: 3^ evaluates to 9.
 
-(iv) << and >> : bitwise binary operators for left shift and right shift. Have same level of precedence as ^. Example: 1<<3 evaluates to 8. And 8>>2 evaluates to 2. That is, the left operand is binary shifted left or right, and the number of bits shifted is given by the right operand. (These are two < or > symbols, without any space between them).
+(iv) << and >> : bitwise binary operators for left shift and right shift. Have same level of precedence as ^. 
 
-Example Input: 2+(3^ + 4)<<2
+### Example: 
 
-Example output line 1: 2, 3^, 4, +, <<, +
+1<<3 evaluates to 8. And 8>>2 evaluates to 2. That is, the left operand is binary shifted left or right, and the number of bits shifted is given by the right operand. (These are two < or > symbols, without any space between them).
 
-Example output line 2: 54
+### Example Input: 2+(3^ + 4)<<2
+
+### Example output line 1: 2, 3^, 4, +, <<, +
+
+### Example output line 2: 54
 
 (that is, 2 + (9+4)<<2 = 2 + 13<<2 = 2+ 52 = 54)
 
@@ -65,9 +69,9 @@ You created a singly linked lists in the first assignment. Use the previous code
 
 Then write a non-recursive program to reverse this linked list. That is, the new list should have the same nodes but in the reversed order. You should not allocate new memory andcreate another linked list. Just modify the pointers of the current linked list suitably. Then display the list. (For the given example, we expect 7, 45, 12 now, and the head of the list should point to the node containing the data 7).
 
-Input: n integers, with space between the values (you can assume that the data values are within -1000 to 1000), and that n will be a small integer.
+### Input: n integers, with space between the values (you can assume that the data values are within -1000 to 1000), and that n will be a small integer.
 
-Output: first display the list (this should be matching with the input), then display the list again after the reverse function is called (this time the list should be reversed). 
+### Output: first display the list (this should be matching with the input), then display the list again after the reverse function is called (this time the list should be reversed). 
 
 ## Lab-3
 
@@ -77,8 +81,9 @@ For each node, data at the left node is smaller than the data at the right node.
 
 Assume that we construct a BST with values 5,8,9,4,6 in this order. Then the resultant tree will look like
 
-On the other hand, if the input data sequence was 8,9,5 (or 8,5,9) then a balanced binary tree with height 1 will be obtained. (We always start with the root and go left or right, recursively, depending on the input value being smaller or larger). To delete a node from the binary tree, one needs to readjust the other nodes so that the BST property still holds. For example, to delete 9 from the above tree, simply delete the node containing value 9. However, to delete 8, we will need to move 9 up. The resultant tree will look like:
+On the other hand, if the input data sequence was 8,9,5 (or 8,5,9) then a balanced binary tree with height 1 will be obtained. (We always start with the root and go left or right, recursively, depending on the input value being smaller or larger). To delete a node from the binary tree, one needs to readjust the other nodes so that the BST property still holds. 
 
+For example, to delete 9 from the above tree, simply delete the node containing value 9. However, to delete 8, we will need to move 9 up. The resultant tree will look like:
 
 1. Write a C program to do the following: (Maintain a global pointer to the root of the BST. Display a menu after each operation. And depending on user input, call appropriate function with inputs provided by the user. Assume that all the values in the BST are distinct and positive).
 
@@ -98,8 +103,11 @@ On the other hand, if the input data sequence was 8,9,5 (or 8,5,9) then a balanc
 
 1. [HEAP] Write a C program which works as follows: (You may create two global arrays of max_size=100 for the purpose of this problem. However, it is not mandatory.)
 
-We will test your code for both min- and max- heaps. We will always start with input 1 below. You need to create 2 arrays: one for min-heap and the other for max-heap. All inputs in the question will be positive integers. You should print the current array after finishing each operation so that we can test
-your code. If the current operation is of type X then print only the max-heap, and if the operation is of type N then print only min-heap (not both together).
+We will test your code for both min- and max- heaps. We will always start with input 1 below. 
+
+You need to create 2 arrays: one for min-heap and the other for max-heap. 
+
+All inputs in the question will be positive integers. You should print the current array after finishing each operation so that we can test your code. If the current operation is of type X then print only the max-heap, and if the operation is of type N then print only min-heap (not both together).
 
 (i) On input 1 X n m1 m2 m3 …..
 
@@ -161,9 +169,9 @@ Try not to use any specific property of AVL trees while implementing these.
 
 Print the width, and the perimeter of the tree.
 
-Width: The width (or diameter) of a tree is the number of nodes on the longest path between two leaf nodes. (It may or may not pass through the root).
+### Width: The width (or diameter) of a tree is the number of nodes on the longest path between two leaf nodes. (It may or may not pass through the root).
 
-Perimeter: Boundary nodes of the tree (sometimes also called boundary traversal – Search it).
+### Perimeter: Boundary nodes of the tree (sometimes also called boundary traversal – Search it).
 
 (vi) On input 6 (a,b)
 
@@ -199,7 +207,7 @@ annoyancei = max(fi - di , 0) (i.e. no annoyance if the class finishes by the pr
 
 Your goals is to come up with an algorithm which minimizes the sum maximum of annoyance of among all the professors. You are required to schedule all the classes (i.e. none of them can be skipped).
 
-Input: You will read the input in the following way: (spaces between t’s and d’s, and new line for each class).
+### Input: You will read the input in the following way: (spaces between t’s and d’s, and new line for each class).
 
 N
 t1 d1
@@ -207,7 +215,7 @@ t2 d2
 …
 tN dN
 
-Output: Print the order of classes taken by the professors in one line, and the total annoyance you computed in the next line. (e.g. in the given example, the output will be: first line: 3, 2, 1 and the second line: 3. This is because the 2nd class will start at 3 and finish at 8 thus having an annoyance of 2. And the
+### Output: Print the order of classes taken by the professors in one line, and the total annoyance you computed in the next line. (e.g. in the given example, the output will be: first line: 3, 2, 1 and the second line: 3. This is because the 2nd class will start at 3 and finish at 8 thus having an annoyance of 2. And the
 1st class will start at 8 and finish at 10 having an annoyance of 1. This scheduling produces a total annoyance of 3.)
 
 You also need to provide a pdf file explaining the algorithm used, the cost of the algorithm and why is this algorithm optimal. Name the file as roll_number.pdf (Write the analysis and the proof of optimality of your algorithm formally).
@@ -220,13 +228,13 @@ Note that if Akshara had picked 3 in her first move then Bharat would have picke
 
 Your aim is to develop an efficient algorithm for maximizing the sum of numbers collected by Akshara on a given sequence of numbers, assuming that she makes the first move. You can assume that both the players are playing “optimally”, i.e. trying their best to get the larger sum for themselves.
 
-Input: A sequence of numbers given in one line. (Some of you were having difficulties with reading inputs in the previous homework. In order to not bother with reading commas, we assume that the input in the following format:
+### Input: A sequence of numbers given in one line. (Some of you were having difficulties with reading inputs in the previous homework. In order to not bother with reading commas, we assume that the input in the following format:
 
  N x1 x2 … xN
 
 Here, N is the number of elements and this is followed by the actual numbers. Further, all the numbers are positive integers. However, they need not be distinct.
 
-Output: Total sum collected by Akshara. And the sequence of her moves. For instance, the given example will result in an output of:
+### Output: Total sum collected by Akshara. And the sequence of her moves. For instance, the given example will result in an output of:
 
 Sum = 6
 Steps = 1, 5
@@ -272,9 +280,9 @@ Note: If the matrix represents weights then the entries can be any integer value
 
 1. For a given directed unweighted graph (which is described by an adjacency matrix given in input.txt), perform DFS. Whenever there is a choice of vertices, pick the smaller numbered vertex. If the input matrix is of size n x n then assume that the vertices are numbered 1, 2, … n.
 
-Input: Input matrix as defined earlier.
+### Input: Input matrix as defined earlier.
 
-Output: First print the vertex numbers followed by their discovery time and finish time. Assume that the time when the first vertex is discovered is 1, and the time is incremented by 1 at every step as discussed in the class. Then print an n x n matrix, which should mimic the adjacency matrix. Wherever there was no edge between vertex i and vertex j (i.e. when (i,j)th entry of M is zero), print 0. For the rest of the edges, print their type. Print T for tree edge, F for forward edge, B for back edge and C for cross edge. The output should look like what is given below. (Note: the matrix shown below may not be meaningful. In fact, it is invalid for the given example (there can only be 3 tree edges for 4 vertices). It is being shown only to present the format of the output).
+### Output: First print the vertex numbers followed by their discovery time and finish time. Assume that the time when the first vertex is discovered is 1, and the time is incremented by 1 at every step as discussed in the class. Then print an n x n matrix, which should mimic the adjacency matrix. Wherever there was no edge between vertex i and vertex j (i.e. when (i,j)th entry of M is zero), print 0. For the rest of the edges, print their type. Print T for tree edge, F for forward edge, B for back edge and C for cross edge. The output should look like what is given below. (Note: the matrix shown below may not be meaningful. In fact, it is invalid for the given example (there can only be 3 tree edges for 4 vertices). It is being shown only to present the format of the output).
 
 1 discovery1 finish1
 2 discovery2 finish2
@@ -290,16 +298,15 @@ N discoveryn finishn
 
 Note that this will require you to implement a function to test if a specific edge is “safe” or not. That is, you will need to check if the specific edge is creating a cycle if added to the set A (as discussed in the class).
 
-Input: A weight matrix of size n x n as explained on page 1.
+### Input: A weight matrix of size n x n as explained on page 1.
 
-Output: The weight of the MST you found. 
+### Output: The weight of the MST you found. 
 
 3. For a given weighted undirected graph specified by it weight matrix, and a given source vertex i find the shortest distance of all the vertices from the source vertex using Dijkstra’s algorithm.
 
-Input: The first line of the input file will have two entries n and S with space between them, where n will denote the number of vertices (labelled 1 to n) and S will denote the source vertex. S will be an integer from among these n numbers. Rest of the input file will contain the weight matrix in the same way as
-explained for input.txt in question 1.
+### Input: The first line of the input file will have two entries n and S with space between them, where n will denote the number of vertices (labelled 1 to n) and S will denote the source vertex. S will be an integer from among these n numbers. Rest of the input file will contain the weight matrix in the same way as explained for input.txt in question 1.
 
-Output: You should print n distances corresponding to the shortest path length from the source S, in a sequence, separated by a space character.
+### Output: You should print n distances corresponding to the shortest path length from the source S, in a sequence, separated by a space character.
 
 That is, you should use a loop to print the output as follows:
 
