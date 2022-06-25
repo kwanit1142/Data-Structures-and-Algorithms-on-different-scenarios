@@ -65,9 +65,7 @@ You created a singly linked lists in the first assignment. Use the previous code
 
 Then write a non-recursive program to reverse this linked list. That is, the new list should have the same nodes but in the reversed order. You should not allocate new memory andcreate another linked list. Just modify the pointers of the current linked list suitably. Then display the list. (For the given example, we expect 7, 45, 12 now, and the head of the list should point to the node containing the data 7).
 
-Input: n integers, 
-
-with space between the values (you can assume that the data values are within -1000 to 1000), and that n will be a small integer.
+Input: n integers, with space between the values (you can assume that the data values are within -1000 to 1000), and that n will be a small integer.
 
 Output: first display the list (this should be matching with the input), then display the list again after the reverse function is called (this time the list should be reversed). 
 
