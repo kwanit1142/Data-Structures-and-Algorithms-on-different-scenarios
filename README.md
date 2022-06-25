@@ -96,8 +96,216 @@ On the other hand, if the input data sequence was 8,9,5 (or 8,5,9) then a balanc
 
 ## Lab-4
 
+1. [HEAP] Write a C program which works as follows: (You may create two global arrays of max_size=100 for the purpose of this problem. However, it is not mandatory.)
+
+We will test your code for both min- and max- heaps. We will always start with input 1 below. You need to create 2 arrays: one for min-heap and the other for max-heap. All inputs in the question will be positive integers. You should print the current array after finishing each operation so that we can test
+your code. If the current operation is of type X then print only the max-heap, and if the operation is of type N then print only min-heap (not both together).
+
+(i) On input 1 X n m1 m2 m3 …..
+
+Creates a maX-heap with n positive integers m1, m2, m3, …. You should first fill the array with the integers m1, m2, m3 …. And then convert this array into a max-heap. (Note that X is used for max heap)
+
+(ii) On input 1 N n m1 m2 m3 …..
+
+Creates a miN-heap with n positive integers m1, m2, m3, …. Similar to (i) above. (Note that N is used for min heap) 
+
+(iii and iv) On input 2 X m and on input 2 N m
+
+(iii) Insert integer m into the already existing max heap. 
+
+(iv) same for min heap.
+
+(v and vi) On input 3 X m and on input 3 N m
+
+(v) Delete element m from the existing max heap. 
+
+(vi) same for min heap.
+
+(The way this operation should be implemented is to replace the deleted integer with the last element of the array and then moving elements so that the heap property is satisfied. Note that you may need to move the newly moved element upwards or downwards, depending on the current elements in the heap. If m is not present in the heap, then do nothing.).
+
+(vii and viii) On input 4 X and on input 4 N
+
+(vii) Delete max element from the existing max heap. 
+
+(viii) Delete min element for min heap
+
+(ix and x) On input 5 X and on input 5 N
+
+(ix) Sort the array containing max heap. 
+
+(x) Same for min heap.
+
+2. [AVL Tree] Write a C program which works as follows: (You may assume that the tree will not contain more than 100 elements).
+ 
+For the purposes of this exercise, you can take a global variable pointing to the root of the AVL tree. You should write separate functions for left-rotate and right-rotate. Call them appropriately to balance the tree when needed.
+
+(i) On input 1 n m1 m2 m3 …..
+
+Create an AVL tree with n positive integers m1, m2, m3, …. You should construct the AVL tree with insertion of elements in the given order.
+
+(ii) On input 2 m
+
+Insert the element m in the existing AVL tree.
+
+(iii) On input 3 m
+
+Delete the element m from the existing AVL tree. Do nothing if m is not present in the tree.
+
+(iv) On input 4
+
+Print the in-order traversal of the tree. For each node, print the contents as (data, height, balance factor). For example, if you have an AVL tree with 2 nodes, with the root and its left child containing data 5 and 3 respectively, then you should print (3,1,0), (5,0,-1).
+
+Try not to use any specific property of AVL trees while implementing these.
+
+(v) On input 5
+
+Print the width, and the perimeter of the tree.
+
+Width: The width (or diameter) of a tree is the number of nodes on the longest path between two leaf nodes. (It may or may not pass through the root).
+
+Perimeter: Boundary nodes of the tree (sometimes also called boundary traversal – Search it).
+
+(vi) On input 6 (a,b)
+
+Print the lowest common ancestor of node containing ‘a’ and ‘b’
+
+(vii) On input 7 (a,b)
+
+Print the route (i.e. values of intermediate nodes) when you move from an ancestor node containing value ‘a’ to a descendant node containing value ‘b’ in the tree. Write -1 if no such path exists.
+
 ## Lab-5
+
+1. Read two arrays A and B from the command line. You can assume that the input is given in two separate lines and the format of each line is as follows:
+ 
+ N, x1, x2, …, xN
+
+Here, N is the number of elements and this is followed by the actual numbers. Further, all the numbers are positive integers. Using hashing techniques we studied in the class, create two new arrays C and D such that:
+
+(i) C contains numbers only in A or in B (symmetric difference) 
+
+(ii) D contains numbers in both A and in B (intersection). 
+
+Print C and D on separate lines. Your algorithm should run in linear time.
+
+2. Read an array A from the command line just like the previous question. Then read a number k from the command line. Write a program to find two numbers x and y in A such that x+y = k. If no such pair can be found then print “Not found”.  Your algorithm should run in linear time.
 
 ## Lab-6
 
+1. There is a single classroom but there are N professors interested in using it. The professors have id numbers 1,2,3…,N and we denote any data for their class by using their id number as a subscript (such as xi). Their classes run for time ti. There is no fixed start time for their classes, but the professors have other meetings(in fact, I bet, they have plenty of them), and they would like to finish their classes by a preferred deadline of di. Given a specific input of (ti, di) pairs, it may not be feasible to provide a schedule which is permissible under the given conditions. For example, (t1=2, d1=9), (t2=5, d2=6), (t3=3, d3=3). The third professor would like to finish her class of 3 time-units by time=3. But if that is permitted then the second professor can’t finish his class of 5 time-units by time=6. (Time starts from 0. We assume that the next class can start immediately after the previous one is finished. No two classes can overlap.)
+
+Hence, we relax the conditions a little, and allow delays beyond their preferred finish time. But we don’t want to annoy professors (who would?). Hence, we permit delays beyond their preferred times but with a method to minimize the displeasure of the professors. Let us denote the finish time of the class by professor i as fi. We measure the annoyance of professor i by the following function:
+
+annoyancei = max(fi - di , 0) (i.e. no annoyance if the class finishes by the preferred time).
+
+Your goals is to come up with an algorithm which minimizes the sum maximum of annoyance of among all the professors. You are required to schedule all the classes (i.e. none of them can be skipped).
+
+Input: You will read the input in the following way: (spaces between t’s and d’s, and new line for each class).
+
+N
+t1 d1
+t2 d2
+…
+tN dN
+
+Output: Print the order of classes taken by the professors in one line, and the total annoyance you computed in the next line. (e.g. in the given example, the output will be: first line: 3, 2, 1 and the second line: 3. This is because the 2nd class will start at 3 and finish at 8 thus having an annoyance of 2. And the
+1st class will start at 8 and finish at 10 having an annoyance of 1. This scheduling produces a total annoyance of 3.)
+
+You also need to provide a pdf file explaining the algorithm used, the cost of the algorithm and why is this algorithm optimal. Name the file as roll_number.pdf (Write the analysis and the proof of optimality of your algorithm formally).
+
+2. Two players Akshara and Bharat play a game in which they take turns to make their moves. The game starts with Akshara deciding to collect some numbers from a given sequence. The rules of the game state that the player making the move can collect only one number from the given sequence, and that the selected number must be either at the beginning or at the end of the sequence. Once the player collects the number, the opponent gets to make a move. Every time a player collects the number, this specific number is removed from the sequence. The game stops when the sequence is empty. The winner of the game is the player who has collected a larger sum.
+
+For example, if the given sequence is 3,5,2,1 and Akshara makes the first move. Then she can pick either 3 or 1. Let us suppose she picks 1. Then Bharat gets to move. The remaining sequence for him is 3,5,2. He may decide to pick 3. Then Akshara picks 5 from the sequence 5,2. And finally, Bharat picks the only remaining number 2. The game ends here. Akshara is the winner with her numbers summing to 6, while Bharat could only reach to 5.
+
+Note that if Akshara had picked 3 in her first move then Bharat would have picked 5. And this would have allowed Bharat to win the game. Therefore, Akshara made a good decision by not going for the first number in the sequence on her first move. Hence, by using an “optimal strategy”, Akshara collected 6 points.
+
+Your aim is to develop an efficient algorithm for maximizing the sum of numbers collected by Akshara on a given sequence of numbers, assuming that she makes the first move. You can assume that both the players are playing “optimally”, i.e. trying their best to get the larger sum for themselves.
+
+Input: A sequence of numbers given in one line. (Some of you were having difficulties with reading inputs in the previous homework. In order to not bother with reading commas, we assume that the input in the following format:
+
+ N x1 x2 … xN
+
+Here, N is the number of elements and this is followed by the actual numbers. Further, all the numbers are positive integers. However, they need not be distinct.
+
+Output: Total sum collected by Akshara. And the sequence of her moves. For instance, the given example will result in an output of:
+
+Sum = 6
+Steps = 1, 5
+
 ## Lab-7
+
+Helper code: (being written here since some of you may not know file handling in C)
+
+Create a file input.txt with the following data: (It shows the adjacency matrix of an undirected graph G). The graph can be represented as
+
+4
+0 1 1 0
+1 0 1 0
+1 1 0 1
+0 0 1 0
+
+Create a C file with the following helper code:
+
+'#include <stdio.h>'
+
+int main(){
+
+  int i,j, n, **M;
+  FILE *fp;
+  fp = fopen(“r”, “input.txt”);
+  fscanf(fp, “%d”, &n); /* assuming that n is a positive integer. */
+  M= (int **) malloc(sizeof(int *)*n);
+  for(i=0; i<n; i++)
+  M[i] = (int*) malloc(sizeof(int)*n);
+  for(i=0; i<n; i++)
+    for(j=0; j<n; j++)
+      fscanf(fp, “%d”, &M[i][j]);
+      /* the above code reads the data from the file into the square matrix M */
+      ….. /* Your code will come here */
+      // free the memory allocated by malloc yourself
+      fclose(fp);
+  return 0;
+  }
+
+The above code will read the adjacency matrix given in the input file. Size and input may change
+
+Note: If the matrix represents weights then the entries can be any integer values. The (i,j)th entry in the matrix represents if ith vertex is connected to the jth vertex (or its weight). If the matrix has (i,j)th entry as 2 but (j,i)th entry as 0 then it is denoting a directed graph where there is an edge (i,j) with weight 2 but the edge (j,i) is absent. An undirected graph’s matrix M will always be symmetric.
+
+1. For a given directed unweighted graph (which is described by an adjacency matrix given in input.txt), perform DFS. Whenever there is a choice of vertices, pick the smaller numbered vertex. If the input matrix is of size n x n then assume that the vertices are numbered 1, 2, … n.
+
+Input: Input matrix as defined earlier.
+
+Output: First print the vertex numbers followed by their discovery time and finish time. Assume that the time when the first vertex is discovered is 1, and the time is incremented by 1 at every step as discussed in the class. Then print an n x n matrix, which should mimic the adjacency matrix. Wherever there was no edge between vertex i and vertex j (i.e. when (i,j)th entry of M is zero), print 0. For the rest of the edges, print their type. Print T for tree edge, F for forward edge, B for back edge and C for cross edge. The output should look like what is given below. (Note: the matrix shown below may not be meaningful. In fact, it is invalid for the given example (there can only be 3 tree edges for 4 vertices). It is being shown only to present the format of the output).
+
+1 discovery1 finish1
+2 discovery2 finish2
+…
+N discoveryn finishn
+
+0 T 0 F
+0 0 T C
+0 T 0 B
+0 T C 0 
+
+2. Given the weight matrix of an undirected graph, implement Kruskal’s algorithm to find a Minimum Spanning Tree.
+
+Note that this will require you to implement a function to test if a specific edge is “safe” or not. That is, you will need to check if the specific edge is creating a cycle if added to the set A (as discussed in the class).
+
+Input: A weight matrix of size n x n as explained on page 1.
+
+Output: The weight of the MST you found. 
+
+3. For a given weighted undirected graph specified by it weight matrix, and a given source vertex i find the shortest distance of all the vertices from the source vertex using Dijkstra’s algorithm.
+
+Input: The first line of the input file will have two entries n and S with space between them, where n will denote the number of vertices (labelled 1 to n) and S will denote the source vertex. S will be an integer from among these n numbers. Rest of the input file will contain the weight matrix in the same way as
+explained for input.txt in question 1.
+
+Output: You should print n distances corresponding to the shortest path length from the source S, in a sequence, separated by a space character.
+
+That is, you should use a loop to print the output as follows:
+
+for(i=1; i<=n; i++)
+  printf(“%d ”, distance[i]);
+
+where the array distance[] is storing distances of vertices from the source vertex.
+
+One of these entries will certainly be 0. And some entries may be UNDEFINED, if the vertex is unreachable from the source vertex. To handle such UNDEFINED entries, we assume that the distances will all be positive integers only, and hence you can take UNDEFINED to be an invalid value -1.
